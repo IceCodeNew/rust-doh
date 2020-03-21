@@ -16,13 +16,15 @@ This requires the `rust` compiler to be installed.
 With built-in support for HTTPS (default):
 
 ```sh
-cargo install doh-proxy
+cargo install --force --root '/usr/local/doh-server/' doh-proxy
+# Don't use git source unless you are willing to contribute bug fixes # cargo install --force --root '/usr/local/doh-server/' --git 'https://github.com/jedisct1/rust-doh.git'
 ```
 
 Without built-in support for HTTPS:
 
 ```sh
-cargo install doh-proxy --no-default-features
+cargo install --force --root '/usr/local/doh-server/' doh-proxy --no-default-features
+# Don't use git source unless you are willing to contribute bug fixes # cargo install --force --root '/usr/local/doh-server/' --git 'https://github.com/jedisct1/rust-doh.git' --no-default-features
 ```
 
 ## Usage
