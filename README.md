@@ -6,8 +6,8 @@ A fast and secure DoH (DNS-over-HTTPS) server written in Rust.
 
 ### Precompiled packages
 
-- [Linux x86_64 (tar)](https://github.com/jedisct1/rust-doh/suites/432902756/artifacts/1502827)
-- [Linux x86_64 (debian package)](https://github.com/jedisct1/rust-doh/suites/432902756/artifacts/1502826)
+- [Linux x86_64 (tar)](https://github.com/jedisct1/rust-doh-server/suites/695269601/artifacts/6621444)
+- [Linux x86_64 (debian package)](https://github.com/jedisct1/rust-doh-server/suites/695269601/artifacts/6621443)
 
 ### From source code
 
@@ -152,6 +152,6 @@ There you have it. Your certificate hash is `3e1a1a0f6c53f3e97a492d57084b5b98070
 `doh-proxy` can be used with [dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy)
 as a client.
 
-`doh-proxy` is currently being used by the `doh.crypto.sx` public DNS resolver.
+`doh-proxy` is used in production for the `doh.crypto.sx` public DNS resolver and many others.
 
-An extensive list of public DoH servers can be found here: [public encrypted DNS servers](https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/public-resolvers.md).
+An extensive list of public DoH servers can be found here: [public encrypted DNS servers](https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md).

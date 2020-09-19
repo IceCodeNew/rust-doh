@@ -212,7 +212,11 @@ impl DoH {
             .header(hyper::header::CONTENT_TYPE, "application/dns-message")
             .header(
                 hyper::header::CACHE_CONTROL,
-                format!("max-age={}", ttl).as_str(),
+                format!(
+                    "max-age={}, stale-if-error={}, stale-while-revalidate={}",
+                    ttl, STALE_IF_ERROR_SECS, STALE_WHILE_REVALIDATE_SECS
+                )
+                .as_str(),
             )
             .body(Body::from(packet))
             .unwrap();
@@ -282,7 +286,7 @@ impl DoH {
         }
 
         let mut server = Http::new();
-        server.keep_alive(self.globals.keepalive);
+        server.http1_keep_alive(self.globals.keepalive);
         server.pipeline_flush(true);
         let executor = LocalExecutor::new(self.globals.runtime_handle.clone());
         let server = server.with_executor(executor);
